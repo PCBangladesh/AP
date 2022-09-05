@@ -1,0 +1,66 @@
+﻿@model AP.Common.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inmueble)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inmueble)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Presupuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Presupuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishOn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProyectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

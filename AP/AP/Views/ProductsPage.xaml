@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18="clr-namespace:AP.Helpers"
+             x:Class="AP.Views.ProductsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="{i18:Translate Products}">
+
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Products}"
+            Padding = "5">
+            <ListView 
+                HasUnevenRows="True"
+                IsRefreshing="{Binding IsRefreshing}"
+                IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding Products}"
+                RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <!--ColumnDefinition Width="6*"/-->
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    FontAttributes="Bold"
+                                    Grid.Column = "0"
+                                    Text="{Binding Nombre}">
+                                </Label>
+                                <Label
+                                    FontAttributes="Italic"
+                                    Grid.Row="1"
+                                    Grid.Column = "0"
+                                    Text="{Binding RazonSocial}">
+                                </Label>
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column = "0"
+                                    Text="{Binding TipoProyecto}">
+                                </Label>
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column = "0"
+                                    Text="{Binding Inmueble}">
+                                </Label>
+                                <Label
+                                    Grid.Row="4"
+                                    Grid.Column = "0"
+                                    Text="{Binding Presupuesto,StringFormat=´{0:C2}´}">
+                                </Label>
+                                <Label
+                                    Grid.Row="5"
+                                    Grid.Column = "0"
+                                    Text="{Binding PublishOn}">
+                                </Label>
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
